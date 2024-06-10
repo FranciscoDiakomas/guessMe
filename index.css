@@ -26,12 +26,17 @@ main{
 .input{
     width: 100%;
     height: 50px;
-    font-size: 13pt;
+    font-size: 20pt;
     border: solid 1px ;
     border-radius: 5px;
     padding: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
+    background-color: rgb(200, 223, 236);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
 }
 .keyboard{
     display: flex;
@@ -83,4 +88,30 @@ button{
 }
 button:active{
     transform: translateY(5px);
+}
+.spinner{
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border: transparent;
+    border-radius: 50%;
+    border: solid 5px orange;
+    border-bottom: transparent solid 10px;
+    transition: all .5s  ease;
+    animation: girar .5s infinite ;
+    display: none;
+
+}
+.resposta{
+    background-color: green;
+    height: 20px;
+    width: 20px;
+}
+@keyframes girar {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+    
 }

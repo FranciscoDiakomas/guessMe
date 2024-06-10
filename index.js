@@ -10,28 +10,45 @@ window.onload = function () {
         let jogar = document.getElementById("jogarbtn")
         jogar.addEventListener("click",()=>{
         let num = entrada.textContent
-        let numGerado = Math.floor(Math.random()*11)
+        let numGerado = Math.floor(Math.random()*10)
         let resposta = document.getElementById("resposta")
-        if(num == numGerado){
+        let spinner = document.getElementById("spinner")
+        spinner.style.display = "flex"
+        setTimeout(()=>{
+            spinner.style.display = "none"
+            if(num == numGerado){
             resposta.textContent =`Parabéns o número gerado foi ${numGerado}`
-            resposta.style.color = "green"
+            resposta.style.backgroundColor = "green"
+            resposta.style.color = "white"
+            resposta.style.width = "400px"
+            resposta.style.display = "flex"
+            resposta.style.borderRadius = "10px"
+            resposta.style.height = "50px"
+            resposta.style.justifyContent= "center"
+            resposta.style.alignItems = "center"
 
         }else{
             resposta.textContent =`Error o número gerado foi ${numGerado}`
-            resposta.style.color = "red"
+            resposta.style.color = "white"
+            resposta.style.backgroundColor = "red"
+            resposta.style.width = "400px"
+            resposta.style.display = "flex"
+            resposta.style.borderRadius = "10px"
+            resposta.style.height = "50px"
+            resposta.style.justifyContent= "center"
+            resposta.style.alignItems = "center"
         }
+        },1000)
+        
     })
+
     let recomecar = document.getElementById("recomecarbtn")
     recomecar.addEventListener("click",()=>{
         let resposta = document.getElementById("resposta")
         entrada.textContent = ""
         resposta.textContent =""
         
+    })   
     })
-    
-        
-    })
-    })
-
-    
+    })    
 }
